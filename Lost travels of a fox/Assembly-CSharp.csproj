@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\JournalScript.cs" />
+     <Compile Include="Assets\Scripts\Level Switcher\LevelSwitcher.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <None Include="Assets\Scripts\Scriptable Objects\README.txt" />
      <None Include="Assets\Prefabs\README.txt" />
@@ -76,6 +78,12 @@
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>H:/Documents/schol/GGJ2019_1/Lost travels of a fox/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>H:/Documents/schol/GGJ2019_1/Lost travels of a fox/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>H:/Documents/schol/GGJ2019_1/Lost travels of a fox/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/SA/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

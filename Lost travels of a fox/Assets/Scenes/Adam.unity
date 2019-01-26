@@ -221,9 +221,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a87319ce934d348baf4441ca9372b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fPlayerSpeedProne: 70
-  fPlayerSpeedStanding: 45
-  fJumpHeight: 4
+  fPlayerSpeedProne: 30
+  fPlayerSpeedStanding: 15
+  fJumpHeight: 250
   rb: {fileID: 1425171563}
   col: {fileID: 1425171559}
 --- !u!65 &1425171559

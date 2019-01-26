@@ -45,15 +45,16 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetAxis("Horizontal") != 0) { rb.velocity = new Vector3(rb.velocity.x + fPlayerSpeedStanding * Time.deltaTime * Input.GetAxis("Horizontal"), rb.velocity.y, 0); }
             //Moves the player on the x axis when standing (slower)
 
-            if(Input.GetButtonDown("Submit") && IsGrounded())
+            if(Input.GetButtonDown("Jump") && IsGrounded())
             {
                 Debug.Log("Jump");
                 rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y + fJumpHeight * Time.deltaTime,0);
             }
        }
 
-       if(Input.GetButtonDown("Jump"))
+       if(Input.GetButtonDown("Stance"))
        {
+            Debug.Log("Stance change");
             bStance = Invert(bStance);
        }
     }
@@ -62,6 +63,6 @@ public class PlayerController : MonoBehaviour {
 
     bool IsGrounded()
     {
-        return Physics.Raycast(rb.transform.position, Vector3.down, fDistToGround + 0.1f);
+        return Physics.Raycast(rb.transform.position, Vector3.down, fDistToGround + 0.05f);
     }
 }
