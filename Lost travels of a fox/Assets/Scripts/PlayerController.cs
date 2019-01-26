@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {     //GIVE THE PLAYER OBJECT A R
         bStance = true;                         //Stance starts as standing
         fDistToGround = col.bounds.extents.y;       //Gets the Y half extent of the collider
         fXExtents = col.bounds.extents.x;           //Gets the X half extent of the collider
-        fGroundCheckExtent = 0.3f;
+        fGroundCheckExtent = 0.5f;
 	}
 
     void FixedUpdate()
@@ -43,7 +43,10 @@ public class PlayerController : MonoBehaviour {     //GIVE THE PLAYER OBJECT A R
             else if (Input.GetAxis("Horizontal") != 0 && !GroundCheck()) { rb.velocity = new Vector3(rb.velocity.x + (fPlayerSpeedStanding) * 0.8f * Time.deltaTime * Input.GetAxis("Horizontal"), rb.velocity.y, 0); }
             //Moves the player on the x axis when standing (slower). Slows the players strafe speed down when in the air.
 
-            if (Input.GetButtonDown("Jump") && GroundCheck()) { rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y + fJumpHeight * 10* Time.deltaTime,0); } 
+            if (Input.GetButtonDown("Jump") && GroundCheck()) {
+                rb.velocity = new Vector3(rb.velocity.x, 0, 0);
+                rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y + fJumpHeight * 10* Time.deltaTime,0);
+            } 
             //If space key is pressed and GroundChecks is true (player on ground), the player jumps.
        }
 

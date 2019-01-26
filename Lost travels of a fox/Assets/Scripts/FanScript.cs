@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FanScript : MonoBehaviour {
 
-    private GameObject g_Object;
+    private GameObject m_Object;
     private Collider objectCol;
     private Rigidbody rb;
     [SerializeField] [Range(0,1)] private float power;
@@ -19,8 +19,8 @@ public class FanScript : MonoBehaviour {
     void OnTriggerEnter(Collider col)
     {
         objectCol = col;
-        g_Object = objectCol.gameObject;
-        rb = g_Object.GetComponent<Rigidbody>();
+        m_Object = objectCol.gameObject;
+        rb = m_Object.GetComponent<Rigidbody>();
     }
 
 
