@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fae47e9f43bd3488c9720786b3a78c, type: 3}
+  m_Name: Bear
+  m_EditorClassIdentifier: 
+  npcName: Bear
+  dialogue:
+  - Hello Fox
+  - I'm Mr bear
+  - 'Nice to Meet You '
+  - 
+  prefab: {fileID: 100000, guid: 49508f51a74036646b0d76f637969e92, type: 3}
+  speechBubble: {fileID: 0}
+  dialogueSound: {fileID: 0}
