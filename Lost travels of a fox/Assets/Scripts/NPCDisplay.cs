@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NPCDisplay : MonoBehaviour {
 
-    public NPCScriptableObject npc;
+    public NPCScriptableObject npc;     // Reference to the npc scriptable object 
 
     private string[] dialogue;
     private int currentDialogue = 0;
@@ -15,13 +15,20 @@ public class NPCDisplay : MonoBehaviour {
 
     private Transform spawnPoint;
     [SerializeField] private bool triggered = false;
-    
+
+    [SerializeField] private Text dialogueText;
+
     public Sprite speechBubbleSprite;
     private AudioClip dialogueSoundLoad;
+    
+    private GameObject dialogueOverlay;
 
     // Use this for initialization
     void Start ()
     {
+        dialogueOverlay = GameObject.FindGameObjectWithTag("Dialogue Overlay");
+        dialogueOverlay.SetActive(false);
+
         dialogueSoundLoad = npc.dialogueSound;
         dialogue = npc.dialogue; 
         prefabModel = npc.prefab;
@@ -35,8 +42,10 @@ public class NPCDisplay : MonoBehaviour {
     {
         if (triggered)
         {
+            dialogueOverlay.SetActive(true);
+            dialogueText.text = npc.dialogue[currentDialogue].ToString();
+            // Play sound for npc - NEED TO ADD 
             TriggerDialogue();
-
             triggered = false;
         }
     }
@@ -45,13 +54,17 @@ public class NPCDisplay : MonoBehaviour {
     {
         Debug.Log(dialogue[currentDialogue]);
         //dialogue[currentDialogue];
-        if (currentDialogue < dialogue.Length - 1)
+        if (currentDialogue <= dialogue.Length - 1)
         {
-            currentDialogue++;
-        }
-        else
-        {
-            currentDialogue = 0;
+            if (npc.dialogue[currentDialogue] == "")
+            {
+                dialogueOverlay.SetActive(false);
+                currentDialogue = 0;
+            }
+            else
+            {
+                currentDialogue++;
+            }
         }
 
         // Print Dialogue[currentDialogue] 
@@ -67,5 +80,10 @@ public class NPCDisplay : MonoBehaviour {
         // if dialogue finished 
         // trigger level event 
 
+    }
+
+    public void SpeechOverlay()
+    {
+        
     }
 }

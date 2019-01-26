@@ -13,7 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Bear
   dialogue:
-  - Hello Fox
+  - Hello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello
+    FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello
+    FoxHello FoxHello FoxHello Fox
   - I'm Mr bear
   - 'Nice to Meet You '
   - 

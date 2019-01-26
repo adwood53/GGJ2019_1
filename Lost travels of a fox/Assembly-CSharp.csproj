@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\FanScript.cs" />
      <Compile Include="Assets\Scripts\JournalScript.cs" />
      <Compile Include="Assets\Scripts\Level Switcher\LevelSwitcher.cs" />
      <Compile Include="Assets\Scripts\NPCDisplay.cs" />
