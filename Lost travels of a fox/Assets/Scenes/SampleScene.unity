@@ -529,9 +529,11 @@ GameObject:
   m_Component:
   - component: {fileID: 145291058}
   - component: {fileID: 145291057}
+  - component: {fileID: 145291060}
+  - component: {fileID: 145291059}
   m_Layer: 0
   m_Name: NPC
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,6 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: e2888af00d13cd94db67cfe4137b6712, type: 2}
   triggered: 0
+  speechBubbleSprite: {fileID: 0}
 --- !u!4 &145291058
 Transform:
   m_ObjectHideFlags: 0
@@ -562,6 +565,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &145291059
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145291056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &145291060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 145291056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01291a630d5aea7499e80a9a86fecddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerInteract: 0
 --- !u!1 &159467683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1425,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797807516}
   m_LocalRotation: {x: -0.0020000336, y: -1.820946e-17, z: 9.104559e-15, w: -0.99999803}
-  m_LocalPosition: {x: 13.705742, y: -0.36414337, z: -11.440781}
+  m_LocalPosition: {x: 13.929808, y: -0.36414337, z: -11.440781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 47475056}
@@ -1495,7 +1522,7 @@ GameObject:
   - component: {fileID: 841382430}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1941,7 +1968,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1066080498}
   m_LocalRotation: {x: -0.0020000336, y: -1.820946e-17, z: 9.104559e-15, w: -0.99999803}
-  m_LocalPosition: {x: 13.705742, y: -0.36414337, z: -11.440781}
+  m_LocalPosition: {x: 13.929808, y: -0.36414337, z: -11.440781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2143400935}

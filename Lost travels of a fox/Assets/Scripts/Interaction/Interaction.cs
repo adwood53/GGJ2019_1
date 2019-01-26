@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
-    bool playerInteract = false;
+    public bool playerInteract = false;
 
     // Use this for initialization
     void Start()
