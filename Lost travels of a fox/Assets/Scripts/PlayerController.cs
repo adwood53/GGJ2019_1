@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
-
+public class PlayerController : MonoBehaviour {     //GIVE THE PLAYER OBJECT A RIGIDBODY AND A BOX COLLIDER AND SET DRAG TO 1. SET COLLISION DETECTION TO CONTINUOUS
+                                                                                            //CREATE A PHYSICS MAT WITH 0.6 IN BOTH FRICTION AND ASSIGN TO COLLIDER
     [SerializeField]                            //Speed for both prone and standing  
     private float fPlayerSpeedProne;            //Rough value of about 40
     [SerializeField]
@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour {
 
     private bool bIsGrounded;                   //Stores whether or not the player is grounded
     private float fDistToGround;                //Y axis half extent 
-    private float fXExtents;
-    private float fGroundCheckExtent;
+    private float fXExtents;                    //X axis half extent
+    private float fGroundCheckExtent;           //Amount that the raycast extends out of the bottom of the collider
 
     [SerializeField]
     private Rigidbody rb;                       //Players rigidbody
@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         bStance = true;                         //Stance starts as standing
-        fDistToGround = col.bounds.extents.y;       //Gets the Y half extent 
-        fXExtents = col.bounds.extents.x;
+        fDistToGround = col.bounds.extents.y;       //Gets the Y half extent of the collider
+        fXExtents = col.bounds.extents.x;           //Gets the X half extent of the collider
         fGroundCheckExtent = 0.3f;
 	}
 
