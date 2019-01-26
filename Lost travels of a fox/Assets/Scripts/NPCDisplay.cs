@@ -11,19 +11,18 @@ public class NPCDisplay : MonoBehaviour {
     private int currentDialogue = 0;
 
     private GameObject prefabModel;
-    //public GameObject SpeechBubblePrefab;
+    private GameObject speechBubblePrefab;
 
     private Transform spawnPoint;
     [SerializeField] private bool triggered = false;
     
-    //public Sprite speechBubbleSprite;
-    // public AudioClip dialogueSoundLoad;
+    public Sprite speechBubbleSprite;
+    private AudioClip dialogueSoundLoad;
 
     // Use this for initialization
     void Start ()
     {
-        // dialogueText = npc.dialogue;
-        // dialogueSoundLoad = npc.dialogueSound;
+        dialogueSoundLoad = npc.dialogueSound;
         dialogue = npc.dialogue; 
         prefabModel = npc.prefab;
         Instantiate(prefabModel, transform);

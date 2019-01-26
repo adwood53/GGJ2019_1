@@ -11,6 +11,7 @@ public class NPCScriptableObject : ScriptableObject
 
     public GameObject prefab;
     public GameObject speechBubble;
+
     public AudioClip dialogueSound;
 
     public void Print()
