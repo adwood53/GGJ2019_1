@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {     //GIVE THE PLAYER OBJECT A R
         bStance = true;                         //Stance starts as standing
         fDistToGround = col.bounds.extents.y;       //Gets the Y half extent of the collider
         fXExtents = col.bounds.extents.x;           //Gets the X half extent of the collider
-        fGroundCheckExtent = 0.5f;
+        fGroundCheckExtent = 0.3f;
 	}
 
     void FixedUpdate()
