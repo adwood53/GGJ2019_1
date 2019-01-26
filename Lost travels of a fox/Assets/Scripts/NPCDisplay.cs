@@ -26,7 +26,7 @@ public class NPCDisplay : MonoBehaviour {
         // dialogueSoundLoad = npc.dialogueSound;
         dialogue = npc.dialogue; 
         prefabModel = npc.prefab;
-        Instantiate(prefabModel);
+        Instantiate(prefabModel, transform);
         Debug.Log("BEAR SHOULD LOAD: " + npc.prefab);
         npc.Print();
 	}
