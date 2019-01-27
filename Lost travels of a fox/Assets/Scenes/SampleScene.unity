@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 00000000000000000000000000000000, type: 0}
+  m_NoiseProfile: {fileID: 0}
   m_AmplitudeGain: 0.4
   m_FrequencyGain: 0.3
   mNoiseOffsets: {x: 0, y: 0, z: 0}
@@ -338,7 +338,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 797807516}
   m_LocalRotation: {x: -0.0020000336, y: -1.820946e-17, z: 9.104559e-15, w: -0.99999803}
-  m_LocalPosition: {x: 18.20631, y: 40.564255, z: -175.3461}
+  m_LocalPosition: {x: 18.206875, y: 40.564255, z: -175.3461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 47475056}
@@ -668,7 +668,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1066080498}
   m_LocalRotation: {x: -0.0020000336, y: -1.820946e-17, z: 9.104559e-15, w: -0.99999803}
-  m_LocalPosition: {x: 18.20631, y: 40.564255, z: -175.3461}
+  m_LocalPosition: {x: 18.206875, y: 40.564255, z: -175.3461}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2143400935}
