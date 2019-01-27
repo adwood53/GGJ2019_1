@@ -5,29 +5,28 @@ using UnityEngine;
 public class Interaction : MonoBehaviour
 {
     public bool playerInteract = false;
-
-    // Use this for initialization
-    void Start()
-    {
-    }
+    private bool playerEntered = false;
 
     // Update is called once per frame
     void Update()
     {
 
-        if ((Input.GetKeyDown(KeyCode.E)) && (playerInteract == true))
+        if ((Input.GetButtonDown("Interact")) && (playerEntered == true))
         {
-            Debug.Log("ENTER TEXT");
-
+            playerInteract = true;
+            Debug.Log("asd");
         }
-
+        if ((Input.GetButtonUp("Interact")))
+        {
+            playerInteract = false;
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-             playerInteract = true;
+            playerEntered = true;
              Debug.Log("Come and talke to me! Press 'E'");
         }
        
@@ -37,8 +36,10 @@ public class Interaction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            playerInteract = false;
+            playerEntered = false;
             Debug.Log("Farewell traveller!");
+            GetComponentInParent<NPCDisplay>().dialogueOverlay.SetActive(false);
+            GetComponentInParent<NPCDisplay>().currentDialogue = 0;
         }
     }
 }

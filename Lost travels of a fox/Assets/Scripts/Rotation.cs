@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    [SerializeField] private GameObject particles;
+    public GameObject Jamsplosion;
+
 
     // Update is called once per frame
     void Update()
@@ -17,9 +18,16 @@ public class Rotation : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            particles.SetActive(true);
-            
-            Destroy(this.gameObject, 0.5f);
+            Explode();
         }
     }
+
+    void Explode()
+    {
+        GameObject Jampocalypse = Instantiate(Jamsplosion, this.gameObject.transform.position, Quaternion.identity);
+        Jampocalypse.GetComponent<ParticleSystem>().Play();
+        Debug.Log("TEST");
+        Destroy(this.gameObject);
+    }
+
 }

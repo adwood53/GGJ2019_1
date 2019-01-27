@@ -6,27 +6,30 @@ using UnityEngine.UI;
 public class NPCDisplay : MonoBehaviour {
 
     public NPCScriptableObject npc;     // Reference to the npc scriptable object 
+    public GameObject interactObject;
 
     private string[] dialogue;
-    private int currentDialogue = 0;
+    public int currentDialogue = 0;
 
     private GameObject prefabModel;
     private GameObject speechBubblePrefab;
 
     private Transform spawnPoint;
-    [SerializeField] private bool triggered = false;
+    private bool triggered = false;
+    private bool active = false;
+    private bool scored = false;
 
-    [SerializeField] private Text dialogueText;
+    private Text dialogueText;
 
-    public Sprite speechBubbleSprite;
+    private Sprite speechBubbleSprite;
     private AudioClip dialogueSoundLoad;
-    
-    private GameObject dialogueOverlay;
+    public GameObject dialogueOverlay;
 
     // Use this for initialization
     void Start ()
     {
         dialogueOverlay = GameObject.FindGameObjectWithTag("Dialogue Overlay");
+        dialogueText = GameObject.Find("DialogueText").GetComponent<Text>();
         dialogueOverlay.SetActive(false);
 
         dialogueSoundLoad = npc.dialogueSound;
@@ -39,14 +42,22 @@ public class NPCDisplay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-    {
-        if (triggered)
+    {   
+        triggered = interactObject.GetComponent<Interaction>().playerInteract;
+
+        if (triggered == false)
         {
+            active = false;
+        }
+
+        if (triggered && !active)
+        {
+            Debug.Log("work");
             dialogueOverlay.SetActive(true);
             dialogueText.text = npc.dialogue[currentDialogue].ToString();
             // Play sound for npc - NEED TO ADD 
             TriggerDialogue();
-            triggered = false;
+            active = true;
         }
     }
 
@@ -60,13 +71,18 @@ public class NPCDisplay : MonoBehaviour {
             {
                 dialogueOverlay.SetActive(false);
                 currentDialogue = 0;
+
+                if (scored == false)
+                {
+                    scored = true;
+                    GameObject.Find("Map Menu").GetComponent<LevelSwitcher>().score++;
+                }
             }
             else
             {
                 currentDialogue++;
             }
         }
-
         // Print Dialogue[currentDialogue] 
         // if (currentDialogue < dialogue.size)
         //CurrentDialogue ++ 
@@ -82,8 +98,4 @@ public class NPCDisplay : MonoBehaviour {
 
     }
 
-    public void SpeechOverlay()
-    {
-        
-    }
 }

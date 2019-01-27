@@ -19,6 +19,6 @@ MonoBehaviour:
   - I'm Mr bear
   - 'Nice to Meet You '
   - 
-  prefab: {fileID: 1186059532148768, guid: 52919567fa398174095b5b8f3a275ef9, type: 2}
+  prefab: {fileID: 1474539809997746, guid: 9dd7e8f7897035242a27b56431f49676, type: 2}
   speechBubble: {fileID: 0}
   dialogueSound: {fileID: 0}
