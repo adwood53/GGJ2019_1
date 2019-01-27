@@ -53,13 +53,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
      <Compile Include="Assets\Scripts\FanScript.cs" />
+     <Compile Include="Assets\Scripts\Interaction\Credits.cs" />
      <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
      <Compile Include="Assets\Scripts\JournalScript.cs" />
      <Compile Include="Assets\Scripts\Level Switcher\LevelSwitcher.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\NPCDisplay.cs" />
      <Compile Include="Assets\Scripts\NPCScriptableObject.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayScript.cs" />
+     <Compile Include="Assets\Scripts\QuitScript.cs" />
      <Compile Include="Assets\Scripts\Rotation.cs" />
      <None Include="Assets\Scripts\Scriptable Objects\README.txt" />
      <None Include="Assets\Prefabs\README.txt" />

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41fae47e9f43bd3488c9720786b3a78c, type: 3}
+  m_Name: cat
+  m_EditorClassIdentifier: 
+  npcName: Cat
+  dialogue:
+  - "Oh honey! Are you okay? We\u2019ve all been worried sick."
+  - "Please, it\u2019s okay. I\u2019m here for you now."
+  - How did that even happen?
+  - Because of a butterfly? We all thought you were kidnapped haha.
+  - "Remember that papa always says that home is where the friends are. If you have
+    friends you\u2019re never lost."
+  - "Your heart and courage led you back to us. And I\u2019m so proud."
+  - Come on.
+  - "I\u2019ve baked your favourite pie."
+  - 
+  prefab: {fileID: 1726164359378062, guid: 4c10d951f3b360e4987ba84dfb795352, type: 2}
+  speechBubble: {fileID: 0}
+  dialogueSound: {fileID: 0}

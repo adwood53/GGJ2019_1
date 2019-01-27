@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPCDisplay : MonoBehaviour {
 
@@ -69,14 +70,12 @@ public class NPCDisplay : MonoBehaviour {
         {
             if (npc.dialogue[currentDialogue] == "")
             {
+                if (dialogue.Length == 9)
+                {
+                    SceneManager.LoadScene(2);
+                }
                 dialogueOverlay.SetActive(false);
                 currentDialogue = 0;
-
-                if (scored == false)
-                {
-                    scored = true;
-                    GameObject.Find("Map Menu").GetComponent<LevelSwitcher>().score++;
-                }
             }
             else
             {

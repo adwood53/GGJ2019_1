@@ -9,8 +9,7 @@ public class LevelSwitcher : MonoBehaviour
     public List<GameObject> m_lLevels = new List<GameObject>();
     public List<Vector3> m_vPositions = new List<Vector3>();
 
-    public int score = 0;
-    [SerializeField] int scoreNeeded;
+    private bool start = true;
 
     Animator m_anJournal;
     GameObject m_goCurrentLevel = null;
@@ -21,17 +20,9 @@ public class LevelSwitcher : MonoBehaviour
     void Start()
     {
         m_anJournal = GameObject.Find("Journal").GetComponent<Animator>();
-        m_goPlayer = GameObject.FindGameObjectWithTag("Player");
+        m_goPlayer = GameObject.Find("fox_01");
         m_goDialog = GameObject.FindGameObjectWithTag("Dialogue Overlay");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (score == scoreNeeded)
-        {
-
-        }
+        changeLevel(0);
     }
 
     public void changeLevel(int p_iLevel)
@@ -39,7 +30,8 @@ public class LevelSwitcher : MonoBehaviour
         m_goDialog.SetActive(true);
         Destroy(m_goCurrentLevel);
         m_goCurrentLevel = Instantiate(m_lLevels[p_iLevel]);
-        m_anJournal.SetInteger("Enter", -1);
+        if (!start) { m_anJournal.SetInteger("Enter", -1); }
+        start = true;
         JournalScript.m_bMenuActive = false;
         m_goPlayer.GetComponent<Rigidbody>().velocity = Vector3.zero;
         m_goPlayer.transform.position = m_vPositions[p_iLevel];

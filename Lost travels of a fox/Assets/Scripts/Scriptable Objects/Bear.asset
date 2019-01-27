@@ -13,11 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Bear
   dialogue:
-  - Hello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello
-    FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello FoxHello
-    FoxHello FoxHello FoxHello Fox
-  - I'm Mr bear
-  - 'Nice to Meet You '
+  - "How did you get so deep into the woods? It\u2019s no place for a child. "
+  - 'You look so sad and lost. '
+  - HA! You have put yourself into this mess and you will get yourself out of it.
+  - 'You must be a burden for your family. '
+  - 'So weak and small, not like a mighty bear. '
+  - My children would never act like that.
+  - Now, bug off!
   - 
   prefab: {fileID: 1474539809997746, guid: 9dd7e8f7897035242a27b56431f49676, type: 2}
   speechBubble: {fileID: 0}

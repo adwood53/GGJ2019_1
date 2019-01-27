@@ -9,6 +9,9 @@ public class JournalScript : MonoBehaviour
     List<GameObject> m_goTabs = new List<GameObject>();
     Animator m_anJournal;
     public static bool m_bMenuActive = false;
+    bool bMap = true;
+    public Sprite sMap;
+    public Sprite sMenu;
 
     // Use this for initialization
     void Start()
@@ -45,5 +48,21 @@ public class JournalScript : MonoBehaviour
         for (int iCount = 0; iCount < m_goTabs.Count; iCount++)
             m_goTabs[iCount].SetActive(false);
         m_goTabs[p_iTab].SetActive(true);
+    }
+
+    public void switchImage()
+    {
+        if (bMap == false)
+        {
+            this.GetComponent<Image>().sprite = sMap;
+            bMap = true;
+        }
+        else
+        {
+            this.GetComponent<Image>().sprite = sMenu;
+            bMap = false;
+        }
+
+
     }
 }
