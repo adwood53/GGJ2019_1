@@ -75,7 +75,7 @@ public class AnimationController : MonoBehaviour
     void Start()
     {
         m_anFox = GetComponent<Animator>();
-        m_fsFoxState = FoxStates.Crawling;
+        m_fsFoxState = FoxStates.Standing;
         StartCoroutine(manageAnimator());
     }
 
